@@ -19,4 +19,16 @@ public class MoodAnalyzerCustomExceptionTest {
 			Assert.assertEquals(MoodAnalyzerExceptions.ExceptionType.NULL, e.type);
 		}
 	}
+
+	@Test
+	public void emptyMood_ShouldThrowCustomException() { // TC3.2
+		try {
+			MoodAnalyzerCustomException moodAnalyzer = new MoodAnalyzerCustomException("");
+			String result = moodAnalyzer.analyseMood();
+			System.out.println("Iam in " + result + " mood.");
+		} catch (MoodAnalyzerExceptions e) {
+			System.out.println(e.type);
+			Assert.assertEquals(MoodAnalyzerExceptions.ExceptionType.EMPTY, e.type);
+		}
+	}
 }
