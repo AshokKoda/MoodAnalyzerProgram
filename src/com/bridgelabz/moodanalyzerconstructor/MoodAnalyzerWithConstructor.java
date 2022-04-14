@@ -24,11 +24,11 @@ public class MoodAnalyzerWithConstructor {
 	}
 	
 	public static void main(String[] args) {
-		MoodAnalyzerWithConstructor moodAnalyzer = new MoodAnalyzerWithConstructor();
-		String sadMood = moodAnalyzer.analyseMood("Iam in sad mood"); // Here using Parameterized Constructor
+		MoodAnalyzerWithConstructor moodAnalyzer = new MoodAnalyzerWithConstructor("Iam in sad mood");
+		String sadMood = moodAnalyzer.analyseMood(); // Here using Default Constructor
 		System.out.println("My Mood is " + sadMood);
 		System.out.println("<----------------OR------------------->");
-		String happyMood = moodAnalyzer.analyseMood("Iam in happy mood");
+		String happyMood = moodAnalyzer.analyseMood("Iam in happy mood"); // Here using Parameterized Constructor
 		System.out.println("My Mood is " + happyMood);
 	}
 
