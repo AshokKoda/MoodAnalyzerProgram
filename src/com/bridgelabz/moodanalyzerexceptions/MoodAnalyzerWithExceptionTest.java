@@ -13,4 +13,15 @@ public class MoodAnalyzerWithExceptionTest {
 		System.out.println("Iam in " + result + " mood.");
 		Assert.assertEquals("Invalid", result);
 	}
+
+	@Test
+	public void givenNullMoodShouldReturnHappy() throws MoodAnalyzerExceptions { // TC2.1
+		try {
+			MoodAnalyzerWithException moodAnalyzer = new MoodAnalyzerWithException("null");
+			String result = moodAnalyzer.analyseMood();
+			System.out.println("Iam in " + result + " mood.");
+		} catch (MoodAnalyzerExceptions e) {
+			Assert.assertEquals("HAPPY", e.type);
+		}
+	}
 }
